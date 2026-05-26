@@ -4,6 +4,8 @@ public:
         int n=grid.size();
         int m=-1,r=-1;
 
+        //the hashmaop way
+
         unordered_map<int,int> freq;
         for(auto& row:grid){
             for(int num:row){
