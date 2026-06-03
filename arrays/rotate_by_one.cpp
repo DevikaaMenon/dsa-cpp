@@ -1,31 +1,15 @@
-#include <bits/stdc++.h>
-using namespace std;
+// User function Template for C++
 
-// Left-rotates arr by 1 position in-place.
-void rotateByOne(vector<int>& arr) {
-    int n = arr.size();
-    int first = arr[0];
-
-    for (int i = 1; i < n; i++)
-        arr[i - 1] = arr[i];
-
-    arr[n - 1] = first;
-}
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int n;
-    cin >> n;
-
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++) cin >> arr[i];
-
-    rotateByOne(arr);
-
-    for (int i = 0; i < n; i++)
-        cout << arr[i] << " \n"[i == n - 1];
-
-    return 0;
-}
+class Solution {
+  public:
+    void rotate(vector<int> &arr) {
+        // code here
+        int n=arr.size();
+        int temp=arr[n-1];
+        
+        for(int i=n-2;i>=0;i--){
+            arr[i+1]=arr[i];
+        }
+        arr[0]=temp;
+    }
+};
