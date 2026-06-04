@@ -5,18 +5,24 @@ int main() {
    int n,m;
    cin>>n>>m;
 
-   int carry=0;
+    int carries = 0;
+    int carry = 0;
 
-   while(n>0 and m>0){
+   while(n>0 or m>0){
         int r1=n%10;
         int r2=m%10;
 
-        if (r1+r2>=10){
-            carry++;
+        int sum=r1+r2+carry;
+        if (sum>=10){
+            carries++;
+            carry+=1;
+        }
+        else{
+            carry=0;
         }
         n/=10;
         m/=10;
    }
-   cout<<carry;
+   cout<<carries;
     return 0;
 }
